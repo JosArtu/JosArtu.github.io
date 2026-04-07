@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WikiLeaks - V2</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; }
+
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        header div:first-child { display: flex; align-items: center; gap: 20px; }
+        header h1 { margin: 0; }
+        header nav { display: flex; gap: 15px; }
+        
+        .search-section { text-align: center; margin-bottom: 30px; }
+        .search-section input { width: 50%; padding: 10px; }
+        
+        .secondary-nav { display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; }
+        
+        .featured-grid { display: flex; gap: 20px; }
+        .featured-grid article { flex: 1; border: 1px solid #ccc; padding: 10px; }
+        .featured-grid img { width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>WikiLeaks</h1>
+            <nav>
+                <a href="#">Leaks</a>
+                <a href="#">News</a>
+                <a href="#">About</a>
+                <a href="#">Partners</a>
+            </nav>
+        </div>
+        <div>
+            <button>Donate</button>
+            <button>Submit</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <input type="text" placeholder="Search Keywords">
+        </section>
+
+        <nav class="secondary-nav">
+            <a href="#">Intelligence</a>
+            <a href="#">Global Economy</a>
+            <a href="#">International Politics</a>
+            <a href="#">Corporations</a>
+            <a href="#">Government</a>
+            <a href="#">War & Military</a>
+        </nav>
+
+        <section>
+            <h2>Featured</h2>
+            <div class="featured-grid">
+                <article>
+                    <img src="https://wikileaks.org/IMG/arton717.png" alt="Mundo">
+                    <h3>The Intolerance Network</h3>
+                    <p>Today, 5th August 2021, WikiLeaks publishes...</p>
+                    <p>05 August 2021</p>
+                </article>
+                <article>
+                    <img src="https://wikileaks.org/IMG/arton716.jpg" alt="Fishrot">
+                    <h3>Fishrot</h3>
+                    <p>Today, November 12, WikiLeaks publishes over...</p>
+                    <p>12 November 2019</p>
+                </article>
+                <article>
+                    <img src="https://wikileaks.org/IMG/arton715.png" alt="OPCW">
+                    <h3>OPCW Douma</h3>
+                    <p>Today, October 23, WikiLeaks publishes a statement...</p>
+                    <p>23 October 2019</p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
