@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    </head>
+    <body>
+        <div id="encabezado"></div>
+        <button type="button" id="titulo">Cliccckkk</button>
+        
+        <div id="encabezado2"></div>
+        <img id="fotoDeftones" style="display: none;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.i6ARE-IGWSgr7DssU3Gv5gHaEK%3Fpid%3DApi&f=1&ipt=0079681bc2ee5d74be1aba5c8da1ee9e3b5ea0c70d1caa3d71483992a46aa32b&ipo=images"/>
+        <button type="button" id="titulo2">Cliccckkk2</button>
+    </body>
+
+    <script>
+        let t = 1986;
+        const c = 3.18
+        let p = {"titulo": "Llano en llamas", "autor": "Juan Rulfo"};
+        
+        let d = document.createElement("p");
+        d.textContent="hola";
+        document.getElementById("encabezado").appendChild(d);
+        d.setAttribute("style", "Color:red")
+
+        async function obtenerJSON(){
+            const respuesta = await fetch('http://openlibrary.org/subjects/love.json?published_in=1500-1600');
+            const datos = await respuesta.json();
+            let a = document.createElement("p");
+            a.textContent=datos.works[0].title;
+            a.setAttribute("style", "color: red")
+            document.getElementById("encabezado").appendChild(a);
+        }
+
+        async function obtenerArt() {
+            const respuesta = await fetch('https://www.theaudiodb.com/api/v1/json/123/search.php?s=deftones')
+            const datos = await respuesta.json();
+            
+            // Creamos y mostramos el texto
+            let a = document.createElement("p");
+            a.textContent = datos.artists[0].strBiography; // Tu propiedad original
+            a.setAttribute("style", "color: red")
+            document.getElementById("encabezado2").appendChild(a);
+
+            // Mostramos la imagen
+            let laImagen = document.getElementById("fotoDeftones");
+            laImagen.style.display = "block"; 
+        }
+
+        let b = document.getElementById("titulo");
+        b.addEventListener("click", obtenerJSON);
+
+        let i = document.getElementById("titulo2");
+        i.addEventListener("click", obtenerArt);
+    </script>
+</html>
