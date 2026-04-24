@@ -1,0 +1,13 @@
+{
+  "name": "servidor-act2",
+  "version": "1.0.0",
+  "description": "Servidor Node.js con 6 endpoints",
+  "main": "miservidor.js",
+  "type": "module",
+  "scripts": {
+    "start": "node miservidor.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
