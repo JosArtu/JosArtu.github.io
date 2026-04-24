@@ -6,7 +6,6 @@ const servidor = http.createServer((req, res) => {
     const pathname = urlProcesada.pathname;
     const queryParams = urlProcesada.query;
     
-    // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -20,16 +19,15 @@ const servidor = http.createServer((req, res) => {
     let responseData = '';
     let statusCode = 200;
     
-    // Route handling - 6 endpoints
     if (pathname === '/api/sec1') {
-        // SEC1 - Promise example
+
         responseData = JSON.stringify({ 
             section: "SEC1",
             description: "Promise example",
             data: "The masters tools will never dismantle the master's house"
         });
     } else if (pathname === '/api/sec2') {
-        // SEC2 - Async/Await
+      
         const asyncOperation = () => new Promise(resolve => 
             setTimeout(() => resolve("Async operation completed"), 100)
         );
@@ -39,35 +37,35 @@ const servidor = http.createServer((req, res) => {
             data: "Freedom is a constant struggle"
         });
     } else if (pathname === '/api/sec3') {
-        // SEC3 - Callbacks
+       
         responseData = JSON.stringify({ 
             section: "SEC3",
             description: "Callback example",
             data: "Callback processed successfully"
         });
     } else if (pathname === '/api/sec4') {
-        // SEC4 - Event Emitter
+      
         responseData = JSON.stringify({ 
             section: "SEC4",
             description: "Event Emitter example",
             data: "Event emitted successfully"
         });
     } else if (pathname === '/api/sec5') {
-        // SEC5 - Error handling
+     
         responseData = JSON.stringify({ 
             section: "SEC5",
             description: "Error handling example",
             data: "No errors encountered"
         });
     } else if (pathname === '/api/sec6') {
-        // SEC6 - File system operations
+
         responseData = JSON.stringify({ 
             section: "SEC6",
             description: "File system example",
             data: "File operations completed"
         });
     } else if (pathname === '/') {
-        // Root endpoint - list all available endpoints
+      
         responseData = JSON.stringify({ 
             message: "Welcome to the API",
             endpoints: [
@@ -90,7 +88,7 @@ const servidor = http.createServer((req, res) => {
     res.end(responseData);
 });
 
-// Use PORT from environment variable (Render provides this)
+
 const puerto = process.env.PORT || 3000;
 
 servidor.listen(puerto, () => {
