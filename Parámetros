@@ -1,0 +1,9 @@
+app.get('/api/routers/:pisoId', (req, res) => {
+    const piso = req.params.pisoId;
+    // Lógica simulada
+    if(piso === "3") {
+        res.json({ id: 3, ip: "192.168.3.1", status: "Activo" });
+    } else {
+        res.status(404).send("Router no encontrado para ese piso");
+    }
+});
